@@ -1,0 +1,19 @@
+/***général***/
+*{
+    font-family: roboto;
+
+    }
+:root {
+    
+    --main-bg-color: #F2F2F2;
+    
+}
+
+
+
+/******mobile first***/
+
+
+@media screen (max-width:767px) {
+    
+}
