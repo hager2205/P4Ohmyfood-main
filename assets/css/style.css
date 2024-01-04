@@ -1,0 +1,37 @@
+.main-container {
+  width: 500px;
+  height: 2252px;
+}
+
+.header {
+  box-shadow: 0px 0px 2px 0px grey;
+  font-family: "shrikhand", sans-serif;
+  text-align: center;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.search {
+  font-family: "roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #f3f3f3;
+  gap: 10px;
+}
+.search .i {
+  display: flex;
+}
+
+.book {
+  text-align: center;
+  font-family: "roboto", sans-serif;
+}
+.book button {
+  color: white;
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  padding: 5px;
+  height: 40px;
+  border-radius: 25px;
+  font-size: 16px;
+}/*# sourceMappingURL=style.css.map */
