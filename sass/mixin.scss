@@ -1,0 +1,13 @@
+@mixin shadow {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+$font-roboto: "roboto", sans-serif;
+@mixin hover {
+  &:hover{
+    transform: scaleX(1.05);
+    transition: 200ms;
+    background-color: lighten($color: $purple, $amount: 30%);
+  
+    cursor: pointer;
+}
+}

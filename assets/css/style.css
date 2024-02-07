@@ -1,56 +1,170 @@
+body {
+  margin: 0;
+}
+
 .main-contenaire {
   width: 500px;
+}
+
+.img-menu {
+  position: relative;
 }
 
 .menu {
   background-color: #f6f6f6;
   border-radius: 20px;
-  height: 1410px;
+  height: 1350px;
+  position: absolute;
+  top: 365px;
+  width: 500px;
 }
-
-.cards-page1 {
-  margin-left: 30px;
-  padding-top: 20px;
-}
-.cards-page1 h2 {
+.menu h2 {
   font-family: "shrikhand", sans-serif;
-  margin-bottom: 40px;
-}
-.cards-page1 p {
-  font-family: "roboto", sans-serif;
+  padding-left: 20px;
 }
 
-.card-menu {
+.header-menu {
+  font-family: "shrikhand", sans-serif;
+  text-align: center;
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  left: 50px;
+  top: 5px;
+  font-size: 25px;
+}
+
+.heart-menu {
+  position: relative;
+  bottom: 45px;
+  left: 450px;
+}
+.heart-menu .empty {
+  position: absolute;
+  z-index: 3;
+  opacity: 1;
+  color: black;
+  background-color: white;
+}
+.heart-menu .empty:hover {
+  opacity: 0;
+  transition: 200ms;
+}
+.heart-menu .full {
+  z-index: 2;
+  background-color: linear-gradient(to top, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 24px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  align-items: center;
+  gap: 15px;
+}
+
+.entree-plats-desserts h2 {
+  font-family: "roboto", sans-serif;
+  padding-left: 20px;
+  font-size: 17px;
+  font-weight: 100;
+  position: relative;
+}
+.entree-plats-desserts h2::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 3px;
+  width: 45px;
+  background-color: #99e2d0;
+}
+
+.indication {
+  position: relative;
+}
+
+.price {
+  position: absolute;
+  left: 385px;
+  top: 28px;
+}
+
+.choix {
   font-family: "roboto", sans-serif;
   display: flex;
   border-radius: 20px;
   align-items: center;
   padding-left: 15px;
-  height: 85px;
+  height: 90px;
   background-color: white;
-  width: 430px;
-  margin-bottom: 15px;
+  width: 450px;
 }
-.card-menu h3 {
+.choix h3 {
   margin-top: 5px;
   margin-bottom: 0;
 }
-.card-menu P {
-  margin-top: 5px;
+
+img {
+  width: 100%;
 }
 
-.p-price {
+.book-menu {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 40px 0px 40px 0px;
 }
 
-.price {
-  font-weight: 700;
+.book-boutton-menu {
+  color: white;
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  padding: 5px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 16px;
+  width: 230px;
+  font-weight: bold;
+  border: none;
 }
 
-.img-menu {
-  max-width: 100%;
+.loader {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: #ffffff;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  animation: disappear 200ms 3s forwards;
+  transform-origin: top;
+}
+.loaderloader:after {
+  content: "";
+  height: 100px;
+  width: 100px;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #9356DC;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out;
+  animation-iteration-count: 3;
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .main-container {
@@ -77,12 +191,18 @@
 }
 
 .book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   font-family: "roboto", sans-serif;
+  background-color: #f6f6f6;
+  height: 275px;
 }
 .book .book-title {
   font-weight: 600;
   font-size: 24px;
+  width: 55%;
 }
 .book .book-text {
   font-weight: 400;
@@ -98,13 +218,30 @@
   width: 230px;
   font-weight: bold;
   border: none;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.book .book-boutton:hover {
+  transform: scaleX(1.05);
+  transition: 200ms;
+  background-color: #e4d5f6;
+  cursor: pointer;
+}
+
+.fonctionnement-filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .fonctionnement {
   gap: 20px;
   font-family: "roboto", sans-serif;
 }
+.fonctionnement h2 {
+  padding-left: 15px;
+}
 .fonctionnement .fonctionnement-filter {
+  width: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,11 +253,16 @@
   margin-bottom: 20px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
-.fonctionnement .fonctionnement-text {
+.fonctionnement .fonctionnement-filter:hover i {
+  color: #9356DC;
+}
+
+.fonctionnement-text {
   font-weight: 500;
   font-size: 20px;
 }
-.fonctionnement .circle {
+
+.circle {
   width: 25px;
   height: 25px;
   background-color: #9356DC;
@@ -129,15 +271,19 @@
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: bold;
   position: relative;
-  right: 132px;
+  right: 100px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .restaurant-cards {
   background-color: #f6f6f6;
-  width: 500px;
+  width: 100%;
   height: 1700px;
   font-family: "roboto", sans-serif;
 }
@@ -175,8 +321,15 @@
 }
 .restaurant-cards .card .card img {
   border-radius: 20px 20px 0 0;
-  width: 500px;
+  width: 100%;
   height: 250px;
+}
+
+.card-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .heart {
@@ -199,6 +352,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  font-size: 24px;
 }
 
 .new {

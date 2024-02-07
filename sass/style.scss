@@ -1,7 +1,7 @@
 @import "./colors";
-@import "./menu1";
-@import "./shadow";
-
+@import "./menu";
+@import "./mixin";
+@import "./loader";
 
 
 
@@ -11,10 +11,10 @@
 }
 
 .header {
-   
+
     font-family: "shrikhand", sans-serif;
     text-align: center;
-     @include shadow;
+    @include shadow;
 }
 
 
@@ -33,13 +33,20 @@
 }
 
 .book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     font-family: $font-roboto;
+    background-color: #f6f6f6;
+    height: 275px;
+
 
     .book-title {
 
         font-weight: 600;
         font-size: 24px;
+        width: 55%;
     }
 
     .book-text {
@@ -57,15 +64,27 @@
         width: 230px;
         font-weight: bold;
         border: none;
+        @include hover;
+        @include shadow;
     }
 }
-.fonctionnement{
-	    gap: 20px;
-        font-family: $font-roboto;
-       
+
+.fonctionnement-filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fonctionnement {
+    gap: 20px;
+    font-family: $font-roboto;
+
+    h2 {
+        padding-left: 15px;
+    }
 
     .fonctionnement-filter {
-        
+        width: 450px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -76,33 +95,46 @@
         border-radius: 20px;
         margin-bottom: 20px;
         @include shadow;
+       
+
+        &:hover i {
+            color: $purple;
+        }
+    }
+
 }
 
-    .fonctionnement-text {
-        font-weight: 500;
-        font-size: 20px;
+.fonctionnement-text {
+    font-weight: 500;
+    font-size: 20px;
 }
+
 .circle {
-    width: 25px; 
-    height: 25px; 
+    width: 25px;
+    height: 25px;
     background-color: $purple;
-    border-radius: 50%; 
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 19px; 
+    font-size: 17px;
     font-weight: bold;
     position: relative;
-    right: 132px;
-  }
+    right: 100px;
 }
 
-.restaurant-cards{
-        background-color: #f6f6f6;
-        width: 500px;
-        height: 1700px;
-        font-family: $font-roboto;
+
+a {
+    text-decoration: none;
+}
+
+.restaurant-cards {
+    background-color: #f6f6f6;
+    width: 100%;
+    height: 1700px;
+    font-family: $font-roboto;
+
 
 
     .restaurant-title {
@@ -112,92 +144,92 @@
         padding-top: 20px;
     }
 
-    .card{
-   
+    .card {
+
         background-color: #FFFF;
         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
         height: 355px;
         border-radius: 20px;
         margin-top: 40px;
-    
-            .card-title{
-    padding-left: 20px;
+
+
+        .card-title {
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card h2 {
+            font-family: $font-roboto;
+            color: black;
+            margin-bottom: 0;
+
+        }
+
+        .card p {
+            color: black;
+            margin-top: 0;
+
+        }
+
+        .card i {
+            position: absolute;
+
+
+            font-size: 25px;
+            right: 20px;
+            top: 20px;
+
+        }
+
+        .card img {
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            height: 250px;
+
+        }
+    }
+}
+
+.card-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.heart {
     position: relative;
-}
 
-            .card h2{
-                font-family: $font-roboto;
-                color: black;
-                margin-bottom: 0;
-  
-}
-            .card p{
-                color: black;
-                margin-top: 0;
-    
-}
-
-            .card i {
-                position: absolute;
-
-              
-                font-size: 25px;
-                right: 20px;
-                top: 20px;
-                
-}
-          
-            .card img {
-                border-radius: 20px 20px 0 0 ;
-                width: 500px ;
-                height: 250px;
-   
-}
-}
-}
-
-// .heart .full {
-//     color:transparent;
-//     background-clip: text;
-//     -webkit-background-clip: text;
-//     opacity: 0;
-//     transition: all 200ms;
-//     background-image: linear-gradient(to top, #9356DC, #FF79DA);
-
-//     &:hover{
-//         opacity: 1;
-//         transform: translate(50%) scale(1.2);
-//         z-index: 3;
-//     }
-// }
-.heart{
-    position: relative;
-    & .empty{
+    & .empty {
         position: absolute;
         z-index: 3;
         opacity: 1;
         color: black;
         background-color: white;
 
-        &:hover{
+        &:hover {
             opacity: 0;
             transition: 200ms;
         }
     }
-    & .full{
+
+    & .full {
         z-index: 2;
-        background:linear-gradient(to top, #9356DC, #FF79DA); 
+        background: linear-gradient(to top, #9356DC, #FF79DA);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
+        font-size: 24px;
     }
 }
 
-.new{
-   
+.new {
+
     position: relative;
 }
-.new::before{
+
+.new::before {
     content: "Nouveau";
     position: absolute;
     height: 35px;
@@ -210,33 +242,32 @@
     align-items: center;
     right: 20px;
     top: 20px;
-    
+
 }
 
-  .footer{
-            background-color: var(--Grey, #353535);
-            padding: 10px 20px 10px 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .footer img {
-            color: white;
-    
-      }
-      .footer h2{
-            font-family: "shrikhand", sans-serif;
-            color: white;
-            font-weight: 300;
-            font-size: 25px;
-      }
+.footer {
+    background-color: var(--Grey, #353535);
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-      .footer p{
-        font-family: $font-roboto;
-            font-size: 18px;
-            color:white;
-    
-      }
+.footer img {
+    color: white;
 
-  
-  
+}
+
+.footer h2 {
+    font-family: "shrikhand", sans-serif;
+    color: white;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+.footer p {
+    font-family: $font-roboto;
+    font-size: 18px;
+    color: white;
+
+}
