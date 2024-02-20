@@ -4,9 +4,6 @@ body {
     margin: 0;
 }
 
-.main-contenaire {
-    width: 500px
-}
 
 .img-menu {
     position: relative;
@@ -20,13 +17,13 @@ a {
     border-radius: 20px;
     height: 1350px;
     position: absolute;
-    top: 365px;
-    width: 500px;
+    top: 280px;
+    width: 100%;
 
     h2 {
         font-family: "shrikhand", sans-serif;
         padding-left: 20px;
-        font-size: 35px;
+        font-size: 22px;
     }
 }
 
@@ -39,7 +36,7 @@ a {
 
 .arrow {
     position: absolute;
-    left: 50px;
+    left: 20px;
     top: 5px;
     font-size: 25px;
 
@@ -50,8 +47,8 @@ a {
 .heart-menu {
 
     position: relative;
-    bottom: 65px;
-    left: 450px;
+    bottom: 46px;
+    left: 270px;
     width: 35px;
 
     & .empty {
@@ -108,15 +105,21 @@ ul {
     }
 
 }
-
+.info{
+   
+    p{
+        font-size: 12px;
+    }
+}
 .indication {
     position: relative;
 }
 
 .price {
     position: absolute;
-    left: 385px;
-    top: 28px;
+    left: 245px;
+    top: 19px;
+    font-size: 14px;
 }
 
 .choix {
@@ -127,12 +130,13 @@ ul {
     padding-left: 15px;
     height: 90px;
     background-color: white;
-    width: 450px;
+    width: 90%;
 
 
     h3 {
         margin-top: 5px;
         margin-bottom: 0;
+        font-size: 15px;
     }
 
 
@@ -166,7 +170,7 @@ img {
   @include shadow;
 }
 
-/****animation****/
+/****animation apparition carte menu****/
 
 .entree {
     opacity: 0;
@@ -198,3 +202,16 @@ img {
         opacity: 1;
     }
 }
+/****animation check****/
+// .check{
+//     background-color: #99e2d0;
+//     color: white;
+//     font-size: 20px;
+//     width: 80px;
+//     height: 90px;
+//     border-radius: 0 20px 20px 0;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+   
+// }
