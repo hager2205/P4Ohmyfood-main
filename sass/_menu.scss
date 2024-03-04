@@ -1,23 +1,23 @@
-
 @import "./mixin";
+
 body {
     margin: 0;
 }
 
 
-.img-menu {
-    position: relative;
-}
+
+
 a {
     text-decoration: none;
     color: black;
 }
+
 .menu {
     background-color: #f6f6f6;
-    border-radius: 20px;
-    height: 1350px;
-    position: absolute;
-    top: 280px;
+    border-radius: 20px 20px 0px 0px;
+    // height: 1350px;
+    // position: absolute;
+    // top: 280px;
     width: 100%;
 
     h2 {
@@ -42,14 +42,13 @@ a {
 
 }
 
-
 /***heart****/
 .heart-menu {
 
     position: relative;
     bottom: 46px;
     left: 270px;
-    width: 35px;
+    width: 40px;
 
     & .empty {
         position: absolute;
@@ -58,15 +57,15 @@ a {
         color: black;
         background-color: white;
         font-size: 26px;
-        
-       
+
+
         &:hover {
             opacity: 0;
             transition: 200ms;
         }
     }
 
-  
+
     & .full {
         z-index: 2;
         background: linear-gradient(to top, #9356DC, #FF79DA);
@@ -105,33 +104,59 @@ ul {
     }
 
 }
-.info{
-   
-    p{
+
+.info {
+
+    p {
         font-size: 12px;
     }
 }
+
 .indication {
-    position: relative;
+    display: flex;
+    width: 100%;
+    gap: 5%;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .price {
-    position: absolute;
-    left: 245px;
-    top: 19px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     font-size: 14px;
+
+    &:hover {
+        transform: translateX(-60px);
+        transition: all 0.3s ease-out;
+        opacity: 1;
+    }
+
 }
 
+/****animation check****/
 .choix {
     font-family: "roboto", sans-serif;
     display: flex;
     border-radius: 20px;
     align-items: center;
-    padding-left: 15px;
+
     height: 90px;
     background-color: white;
     width: 90%;
+    position: relative;
 
+    &:hover {
+
+        h3,
+        .info p{
+            width: 75%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
 
     h3 {
         margin-top: 5px;
@@ -139,8 +164,50 @@ ul {
         font-size: 15px;
     }
 
+    span {
+        display: block;
+        position: absolute;
+        left: 100%;
+        width: 60px;
+        height: 100%;
+        border-radius:0px  16px 16px 0px;
+        transition: all 0.3s ease-out;
+        opacity: 0;
+        background-color: #99e2d0;
+margin-bottom: -10px;
 
+    }
+
+    i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 26px 16px 20px 16px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50px;
+        background-color: white;
+        padding: 10px;
+    }
+
+    .fa-check {
+        font-size: 16px;
+        color: #99e2d0;
+    }
+
+    &:hover span {
+        transform: translateX(-60px);
+        opacity: 1;
+        transition: all 0.3s ease-out;
+
+    }
+
+    &:hover .fa-check {
+        transition: all 0.5s ease-out;
+        transform: rotate(-360deg);
+    }
 }
+
 
 img {
 
@@ -166,8 +233,8 @@ img {
     width: 230px;
     font-weight: bold;
     border: none;
-  @include hover;
-  @include shadow;
+    @include hover;
+    @include shadow;
 }
 
 /****animation apparition carte menu****/
@@ -202,16 +269,80 @@ img {
         opacity: 1;
     }
 }
-/****animation check****/
-// .check{
-//     background-color: #99e2d0;
-//     color: white;
-//     font-size: 20px;
-//     width: 80px;
-//     height: 90px;
-//     border-radius: 0 20px 20px 0;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-   
-// }
+
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .menu-section {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+
+        .menu {
+            width: 70%;
+            // top: 885px;
+        }
+    }
+
+    .choix {
+        width: 60%;
+    }
+
+    .menu-title {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .heart-menu {
+
+        left: 390px;
+    }
+
+    .sous-titre {
+        padding-left: 18%;
+    }
+
+    .img-menu {
+        height: 550px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .menu-section {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+
+        .menu {
+            width: 70%;
+            // top: 885px;
+        }
+    }
+
+    .choix {
+        width: 60%;
+    }
+
+    .menu-title {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .heart-menu {
+
+        left: 485px;
+    }
+
+    .sous-titre {
+        padding-left: 18%;
+    }
+
+    .img-menu {
+        height: 550px;
+    }
+}
