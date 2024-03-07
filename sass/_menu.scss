@@ -12,20 +12,7 @@ a {
     color: black;
 }
 
-.menu {
-    background-color: #f6f6f6;
-    border-radius: 20px 20px 0px 0px;
-    // height: 1350px;
-    // position: absolute;
-    // top: 280px;
-    width: 100%;
 
-    h2 {
-        font-family: "shrikhand", sans-serif;
-        padding-left: 20px;
-        font-size: 22px;
-    }
-}
 
 .header-menu {
     font-family: "shrikhand", sans-serif;
@@ -42,12 +29,101 @@ a {
 
 }
 
+.menu {
+    background-color: #f6f6f6;
+    border-radius: 20px 20px 0px 0px;
+
+    width: 100%;
+
+    h2 {
+        font-family: "shrikhand", sans-serif;
+        padding-left: 20px;
+        font-size: 24px;
+        padding-top: 30px;
+        margin-bottom: 0;
+
+    }
+}
+
+.img-menu {
+    position: relative;
+}
+
+img {
+
+    width: 100%;
+}
+
+.book-menu {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+
+/***Boutton***/
+
+
+.book-boutton-menu {
+    color: white;
+    background-image: linear-gradient(to top, #9356DC, #FF79DA);
+    padding: 5px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    width: 230px;
+    font-weight: bold;
+    border: none;
+    @include hover;
+    @include shadow;
+}
+
+.position-menu {
+    position: absolute;
+    width: 100%;
+   margin-top: -55px;
+}
+
+/****animation apparition carte menu****/
+
+.entree {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+
+    animation-delay: 0.5s;
+}
+
+.plats {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.desserts {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+
+    animation-delay: 1.5s;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
 /***heart****/
 .heart-menu {
 
     position: relative;
-    bottom: 46px;
-    left: 270px;
+    bottom: 31px;
+    left: 82%;
     width: 40px;
 
     & .empty {
@@ -92,7 +168,9 @@ ul {
     font-size: 17px;
     font-weight: 100;
     position: relative;
+    padding-top: 0;
 
+    /***barre sous le sous-titre****/
     &::after {
         content: "";
         position: absolute;
@@ -150,7 +228,7 @@ ul {
     &:hover {
 
         h3,
-        .info p{
+        .info p {
             width: 75%;
             text-overflow: ellipsis;
             overflow: hidden;
@@ -170,11 +248,11 @@ ul {
         left: 100%;
         width: 60px;
         height: 100%;
-        border-radius:0px  16px 16px 0px;
+        border-radius: 0px 16px 16px 0px;
         transition: all 0.3s ease-out;
         opacity: 0;
         background-color: #99e2d0;
-margin-bottom: -10px;
+      
 
     }
 
@@ -209,140 +287,30 @@ margin-bottom: -10px;
 }
 
 
-img {
-
-    width: 100%;
-}
-
-.book-menu {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0px 40px 0px;
-}
-
-/***Boutton***/
-
-
-.book-boutton-menu {
-    color: white;
-    background-image: linear-gradient(to top, #9356DC, #FF79DA);
-    padding: 5px;
-    height: 50px;
-    border-radius: 25px;
-    font-size: 16px;
-    width: 230px;
-    font-weight: bold;
-    border: none;
-    @include hover;
-    @include shadow;
-}
-
-/****animation apparition carte menu****/
-
-.entree {
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
-
-    animation-delay: 0.5s;
-}
-
-.plats {
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
-    animation-delay: 1s;
-}
-
-.desserts {
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
-
-    animation-delay: 1.5s;
-}
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-
-
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .menu-section {
-
+@media screen and (min-width: 769px) {
+    .menu-section{
         display: flex;
-        flex-direction: row;
         justify-content: center;
-
-
-        .menu {
-            width: 70%;
-            // top: 885px;
+        margin-top: 25px;
+    }
+    .menu {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        @media screen and (min-width: 1643px) {
+            width: 60%;
+            
         }
     }
-
-    .choix {
-        width: 60%;
-    }
-
-    .menu-title {
+    .menu-title h2{
         text-align: center;
-        padding-top: 20px;
     }
-
-    .heart-menu {
-
-        left: 390px;
+    .affiche-menu{
+        width: 80%;
+        
     }
-
-    .sous-titre {
-        padding-left: 18%;
-    }
-
-    .img-menu {
-        height: 550px;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .menu-section {
-
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-
-
-        .menu {
-            width: 70%;
-            // top: 885px;
-        }
-    }
-
-    .choix {
-        width: 60%;
-    }
-
-    .menu-title {
-        text-align: center;
-        padding-top: 20px;
-    }
-
-    .heart-menu {
-
-        left: 485px;
-    }
-
-    .sous-titre {
-        padding-left: 18%;
-    }
-
-    .img-menu {
-        height: 550px;
+    .heart-menu{
+        left: 110%;
     }
 }
