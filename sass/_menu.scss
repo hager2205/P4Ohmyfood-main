@@ -81,7 +81,7 @@ img {
 .position-menu {
     position: absolute;
     width: 100%;
-   margin-top: -55px;
+    margin-top: -55px;
 }
 
 /****animation apparition carte menu****/
@@ -131,9 +131,9 @@ img {
         z-index: 3;
         opacity: 1;
         color: black;
-        background-color: white;
+        background-color:#f6f6f6;
         font-size: 26px;
-
+     
 
         &:hover {
             opacity: 0;
@@ -209,6 +209,7 @@ ul {
         transform: translateX(-60px);
         transition: all 0.3s ease-out;
         opacity: 1;
+        margin-right: 5px;
     }
 
 }
@@ -224,7 +225,9 @@ ul {
     background-color: white;
     width: 90%;
     position: relative;
+    @include shadow;
 
+    /****retrait texte****/
     &:hover {
 
         h3,
@@ -252,7 +255,7 @@ ul {
         transition: all 0.3s ease-out;
         opacity: 0;
         background-color: #99e2d0;
-      
+
 
     }
 
@@ -284,33 +287,92 @@ ul {
         transition: all 0.5s ease-out;
         transform: rotate(-360deg);
     }
-}
+   
+        &:hover .price {
+            transform: translateX(-60px);
+            transition: all 0.3s ease-out;
+            opacity: 1;
+        }
+    }
+
+    .price {
+        &:hover {
+            transform: translateX(-60px);
+            transition: all 0.3s ease-out;
+            opacity: 1;
+        }
+    }
+      
+    
+
 
 
 @media screen and (min-width: 769px) {
-    .menu-section{
+    img {
+        height: 400px;
+    }
+    .menu-section {
         display: flex;
         justify-content: center;
         margin-top: 25px;
     }
+
     .menu {
         width: 70%;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+
         @media screen and (min-width: 1643px) {
             width: 60%;
-            
+
         }
     }
-    .menu-title h2{
+
+    .menu-title h2 {
         text-align: center;
     }
-    .affiche-menu{
+
+    .affiche-menu {
         width: 80%;
-        
+
     }
-    .heart-menu{
+
+    .heart-menu {
         left: 110%;
+    }
+
+    .choix {
+        &:hover {
+
+            h3,
+            .info p {
+                width: 100%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+        &:hover .price {
+            transform: translateX(-60px);
+            transition: all 0.3s ease-out;
+            opacity: 1;
+        }
+    }
+
+    .price {
+        &:hover {
+            transform: translateX(-60px);
+            transition: all 0.3s ease-out;
+            opacity: 1;
+        }
+    }
+
+    .entree-plats-desserts h2 {
+        padding-left: 5%;
+
+        &::after {
+            left: 5%;
+        }
     }
 }
