@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
 }
@@ -129,6 +130,7 @@ img {
   font-size: 24px;
 }
 
+/*******fin du code heart*****/
 ul {
   display: flex;
   flex-direction: column;
@@ -145,7 +147,7 @@ ul {
   font-weight: 100;
   position: relative;
   padding-top: 0;
-  /***barre sous le sous-titre****/
+  /***barre  verte en dessous le sous-titre***/
 }
 .entree-plats-desserts h2::after {
   content: "";
@@ -170,20 +172,18 @@ ul {
   padding-right: 10px;
 }
 
-.price {
+/**** animation check ****/
+.check {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 14px;
-}
-.price:hover {
-  transform: translateX(-60px);
+  justify-content: flex-end;
+  width: 60px;
+  height: 100%;
+  border-radius: 0px 16px 16px 0px;
   transition: all 0.3s ease-out;
-  opacity: 1;
-  margin-right: 5px;
+  opacity: 0;
+  background-color: #99e2d0;
 }
 
-/****animation check****/
 .choix {
   font-family: "roboto", sans-serif;
   display: flex;
@@ -191,10 +191,10 @@ ul {
   align-items: center;
   height: 90px;
   background-color: white;
-  width: 90%;
+  width: 95%;
   position: relative;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  /****retrait texte****/
+  /****texte rogné****/
 }
 .choix:hover h3,
 .choix:hover .info p {
@@ -207,17 +207,6 @@ ul {
   margin-top: 5px;
   margin-bottom: 0;
   font-size: 15px;
-}
-.choix span {
-  display: block;
-  position: absolute;
-  left: 100%;
-  width: 60px;
-  height: 100%;
-  border-radius: 0px 16px 16px 0px;
-  transition: all 0.3s ease-out;
-  opacity: 0;
-  background-color: #99e2d0;
 }
 .choix i {
   display: flex;
@@ -235,7 +224,6 @@ ul {
   color: #99e2d0;
 }
 .choix:hover span {
-  transform: translateX(-60px);
   opacity: 1;
   transition: all 0.3s ease-out;
 }
@@ -249,12 +237,16 @@ ul {
   opacity: 1;
 }
 
-.price:hover {
-  transform: translateX(-60px);
-  transition: all 0.3s ease-out;
-  opacity: 1;
+.price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  position: relative;
+  left: 45px;
 }
 
+/****responsive*****/
 @media screen and (min-width: 769px) {
   img {
     height: 400px;
@@ -273,10 +265,13 @@ ul {
 }
 @media screen and (min-width: 769px) and (min-width: 1643px) {
   .menu {
-    width: 60%;
+    width: 53%;
   }
 }
 @media screen and (min-width: 769px) {
+  .menu-title {
+    width: 36%;
+  }
   .menu-title h2 {
     text-align: center;
   }
@@ -285,6 +280,9 @@ ul {
   }
   .heart-menu {
     left: 110%;
+  }
+  .choix {
+    width: 100%;
   }
   .choix:hover h3,
   .choix:hover .info p {
@@ -303,32 +301,41 @@ ul {
     transition: all 0.3s ease-out;
     opacity: 1;
   }
-  .entree-plats-desserts h2 {
-    padding-left: 5%;
-  }
-  .entree-plats-desserts h2::after {
-    left: 5%;
-  }
 }
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: hideLoader 5s ease-out forwards;
+}
+
 .loader {
-  position: absolute;
-  top: 50%;
-  right: 40%;
-  width: 100px;
-  height: 100px;
-  border: 5px solid #9356DC;
+  width: 60px;
+  height: 60px;
+  border: 5px solid #935693;
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
-@media screen and (min-width: 768px) {
-  .loader {
-    right: 46%;
+
+@keyframes hideLoader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
-
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -537,11 +544,10 @@ a {
   margin-bottom: 0px;
 }
 
-@media screen and (max-width: 768px) {
-  img {
-    height: 260px;
-  }
+.cards {
+  width: 100%;
 }
+
 .restaurant-cards {
   width: 100%;
   padding-bottom: 50px;
@@ -641,6 +647,9 @@ a {
   flex-direction: column;
   gap: 10px;
 }
+.footer a {
+  color: white;
+}
 
 .footer img {
   color: white;
@@ -693,7 +702,7 @@ a {
     flex-wrap: wrap;
     gap: 45px;
   }
-  .test {
+  .cards {
     width: 40%;
   }
   .title {

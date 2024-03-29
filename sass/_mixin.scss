@@ -1,7 +1,7 @@
 @mixin shadow {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
-$font-roboto: "roboto", sans-serif;
+
 
 @mixin hover {
   &:hover{
@@ -12,3 +12,5 @@ $font-roboto: "roboto", sans-serif;
     background-image: linear-gradient(to top, #d0b9f3, #f7b0da);
 }
 }
+
+$font-roboto: "roboto", sans-serif;
