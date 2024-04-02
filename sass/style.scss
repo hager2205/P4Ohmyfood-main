@@ -1,5 +1,3 @@
-
-
 @import "./menu";
 @import "./mixin";
 @import "./loader";
@@ -138,18 +136,20 @@
     font-weight: 900;
     font-size: 15px;
     padding-left: 8px;
-p{
-    padding-right: 9px;
-}
+
+    p {
+        padding-right: 9px;
+    }
 }
 
 .fonctionnement-text-2 {
     font-weight: 900;
     font-size: 15px;
     margin-right: 25px;
-    @media screen  and (min-width: 1024px){
+
+    @media screen and (min-width: 1024px) {
         margin-right: 15px;
-        
+
     }
 }
 
@@ -157,9 +157,10 @@ p{
     font-weight: 900;
     font-size: 15px;
     margin-right: 19px;
-    @media screen  and (min-width: 1024px){
+
+    @media screen and (min-width: 1024px) {
         margin-right: 10px;
-        
+
     }
 }
 
@@ -174,7 +175,7 @@ p{
     color: white;
     font-size: 17px;
     font-weight: bold;
-   
+
     position: absolute;
     left: -2%;
 }
@@ -190,8 +191,8 @@ p{
     color: white;
     font-size: 17px;
     font-weight: bold;
-  position: absolute;
-  left: -2%;
+    position: absolute;
+    left: -2%;
 
 }
 
@@ -226,26 +227,11 @@ a {
 
     }
 }
-// .img-dimension{
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     img {
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-     
-//     }
-     
-// }
 
-    // img {
-    //     object-fit: cover;
-     
-    // }
-    
 
-.cards{
+
+
+.cards {
     width: 100%;
 }
 
@@ -300,6 +286,8 @@ a {
         .card img {
             border-radius: 20px 20px 0 0;
             width: 100%;
+            height: 250px;
+            object-fit: cover;
 
 
         }
@@ -370,7 +358,8 @@ a {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    a{
+
+    a {
         color: white;
     }
 }
@@ -403,13 +392,13 @@ a {
         color: white;
         margin-top: 20px;
     }
-  
+
 }
 
 
 
 
-@media screen and (min-width: 769px)  {
+@media screen and (min-width: 769px) {
 
 
 
@@ -420,32 +409,34 @@ a {
         gap: 30px;
         width: 83%;
     }
-    .fonctionnement h2{
+
+    .fonctionnement h2 {
         padding-left: 9%;
     }
 
-  .filters{
-    display: flex;
-    justify-content: center;
-   
-  }
+    .filters {
+        display: flex;
+        justify-content: center;
 
-    .restaurant-title   h2{
+    }
+
+    .restaurant-title h2 {
         padding-left: 8%;
-      }
+    }
+
     .restaurant-cards {
         display: flex;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
         gap: 45px;
-    
+
 
     }
 
     .cards {
         width: 40%;
-       
+
     }
 
     .title {
