@@ -239,6 +239,10 @@ ul {
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
+            @media screen and (min-width:400px) {
+                width: 100%;
+                
+            }
         }
     }
 
@@ -305,6 +309,7 @@ ul {
 @media screen and (min-width: 769px) {
     img {
         height: 400px;
+        object-fit: cover;
     }
 
     .menu-section {
@@ -349,12 +354,17 @@ ul {
 
             h3,
             .info p {
-                width: 100%;
+                width: 75%;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
+                @media screen and (min-width: 400px) {
+                    width: 100%;
+                    
+                }
             }
         }
+
 
         &:hover .price {
             transform: translateX(-60px);

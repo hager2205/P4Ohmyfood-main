@@ -203,6 +203,12 @@ ul {
   overflow: hidden;
   white-space: nowrap;
 }
+@media screen and (min-width: 400px) {
+  .choix:hover h3,
+  .choix:hover .info p {
+    width: 100%;
+  }
+}
 .choix h3 {
   margin-top: 5px;
   margin-bottom: 0;
@@ -250,6 +256,8 @@ ul {
 @media screen and (min-width: 769px) {
   img {
     height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .menu-section {
     display: flex;
@@ -286,11 +294,19 @@ ul {
   }
   .choix:hover h3,
   .choix:hover .info p {
-    width: 100%;
+    width: 75%;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
   }
+}
+@media screen and (min-width: 769px) and (min-width: 400px) {
+  .choix:hover h3,
+  .choix:hover .info p {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 769px) {
   .choix:hover .price {
     transform: translateX(-60px);
     transition: all 0.3s ease-out;
@@ -313,7 +329,7 @@ ul {
   height: 100%;
   z-index: 200;
   background-color: rgba(0, 0, 0, 0.7);
-  animation: hideLoader 5s ease-out forwards;
+  animation: hideLoader 3s ease-out forwards;
 }
 
 .loader {
